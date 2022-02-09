@@ -4,18 +4,18 @@ import './App.css';
 
 const option = {
   scheme: {
-    protocol: 'zhihu',
+    protocol: 'dewuapp',
   },
   intent: {
     package: 'com.zhihu.android',
     scheme: 'zhihu',
   },
   universal: {
-    host: 'oia.zhihu.com',
+    host: 'm.dewu.com/note',
   },
   appstore: 'https://itunes.apple.com/cn/app/id432274380',
   yingyongbao: '//a.app.qq.com/o/simple.jsp?pkgname=com.zhihu.android',
-  fallback: 'https://oia.zhihu.com/',
+  fallback: 'https://m.dewu.com/note/home/HomePage',
   timeout: 2000,
 };
 
@@ -63,42 +63,42 @@ function App() {
       </button>
       <button
         onClick={() => {
-          evoke('zhihu://question/270839820');
+          evoke('dewuapp://m.poizon.com/router/home/HomePage');
         }}
       >
         schema - iframe
       </button>
       <button
         onClick={() => {
-          evokeByLocation('zhihu://question/270839820');
+          evokeByLocation('dewuapp://m.poizon.com/router/home/HomePage');
         }}
       >
         schema - location
       </button>
       <button
         onClick={() => {
-          evokeByTagA('zhihu://question/270839820');
+          evokeByTagA('dewuapp://m.poizon.com/router/home/HomePage');
         }}
       >
         schema - A Tag
       </button>
-      <button
+      {/* <button
         onClick={() => {
           evokeByLocation(lib.generateIntent({ path: '' }));
         }}
       >
         intent - location
-      </button>
+      </button> */}
       <button
         onClick={() => {
-          evokeByLocation('https://oia.zhihu.com/question/270839820/answer/477722658');
+          evokeByLocation('https://m.dewu.com/note/home/HomePage');
         }}
       >
         universal-link
       </button>
       <button
         onClick={() => {
-          lib.open({ path: 'question/270839820/answer/477722658' });
+          lib.open({ path: 'router/home/HomePage' });
         }}
       >
         callapp-lib 唤端
